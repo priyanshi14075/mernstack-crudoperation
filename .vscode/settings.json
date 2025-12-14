@@ -1,2 +1,105 @@
 {
 }
+
+
+// import React, { useState } from 'react';
+
+// const App = () => {
+//   // Initial mock data (our "database")
+//   const [users, setUsers] = useState([
+//     { id: 1, firstName: 'Jane', lastName: 'Doe' },
+//     { id: 2, firstName: 'John', lastName: 'Smith' },
+//   ]);
+//   const [firstName, setFirstName] = useState('');
+//   const [lastName, setLastName] = useState('');
+//   const [editingId, setEditingId] = useState(null);
+
+//   // --- CREATE Operation ---
+//   const handleCreate = (e) => {
+//     e.preventDefault();
+//     if (firstName && lastName) {
+//       const newUser = {
+//         id: Date.now(), // Simple unique ID generation
+//         firstName,
+//         lastName,
+//       };
+//       setUsers([...users, newUser]); // Add new user to the state array
+//       setFirstName('');
+//       setLastName('');
+//     }
+//   };
+
+//   // --- DELETE Operation ---
+//   const handleDelete = (id) => {
+//     // Filter out the item to be deleted
+//     const updatedUsers = users.filter(user => user.id !== id);
+//     setUsers(updatedUsers);
+//   };
+
+//   // --- UPDATE Operations ---
+//   const handleEditClick = (user) => {
+//     setEditingId(user.id);
+//     setFirstName(user.firstName);
+//     setLastName(user.lastName);
+//   };
+
+//   const handleUpdate = (e) => {
+//     e.preventDefault();
+//     const updatedUsers = users.map(user =>
+//       user.id === editingId ? { ...user, firstName, lastName } : user
+//     );
+//     setUsers(updatedUsers);
+//     // Reset form and editing state
+//     setFirstName('');
+//     setLastName('');
+//     setEditingId(null);
+//   };
+
+//   const handleCancelEdit = () => {
+//     setFirstName('');
+//     setLastName('');
+//     setEditingId(null);
+//   };
+
+//   return (
+//     <div style={{ padding: '20px' }}>
+//       <h1>React CRUD Operations (No API)</h1>
+
+//       {/* Create/Update Form */}
+//       <form onSubmit={editingId ? handleUpdate : handleCreate} style={{ marginBottom: '20px' }}>
+//         <input
+//           type="text"
+//           placeholder="First Name"
+//           value={firstName}
+//           onChange={(e) => setFirstName(e.target.value)}
+//           required
+//         />
+//         <input
+//           type="text"
+//           placeholder="Last Name"
+//           value={lastName}
+//           onChange={(e) => setLastName(e.target.value)}
+//           required
+//         />
+//         <button type="submit">
+//           {editingId ? 'Update User' : 'Add User'}
+//         </button>
+//         {editingId && <button type="button" onClick={handleCancelEdit}>Cancel</button>}
+//       </form>
+
+//       {/* Read Operation (Displaying Data) */}
+//       <h2>User List</h2>
+//       <ul style={{ listStyle: 'none', padding: 0 }}>
+//         {users.map(user => (
+//           <li key={user.id} style={{ marginBottom: '10px', display: 'flex', gap: '10px', alignItems: 'center' }}>
+//             <span>{user.firstName} {user.lastName}</span>
+//             <button onClick={() => handleEditClick(user)}>Edit</button>
+//             <button onClick={() => handleDelete(user.id)}>Delete</button>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default App;
